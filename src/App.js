@@ -1,9 +1,11 @@
 import React from 'react';
-import NavBar from './componentes/NavBar';
+import Header from './components/header/Header';
+import NavBar from './components/navBar/NavBar.jsx';
 
 function App() {
   return (
     <div className="App">
+      <Header></Header>
       <NavBar></NavBar>
     </div>
   );
