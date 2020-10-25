@@ -1,5 +1,4 @@
 import React from 'react';
-import CartWidget from './components/cartWidget/CartWidget.jsx';
 import Header from './components/header/Header';
 import ItemListContainer from './components/itemListContainer/ItemListContainer.jsx';
 import NavBar from './components/navBar/NavBar.jsx';
