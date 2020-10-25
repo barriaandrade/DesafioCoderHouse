@@ -1,4 +1,6 @@
 import React from "react";
+import CartWidget from "../cartWidget/CartWidget";
+
 import "../header/Header.css";
 
 const Header = () => {
@@ -14,14 +16,15 @@ const Header = () => {
             </div>
             {/* Right title */}
           
-            <div className="col-md-4 right-header end-xs">
+            {/* <div className="col-md-4 right-header end-xs">
                 <section className="icon-list">
                   <i className="nes-icon facebook is-medium"></i>
                   <i className="nes-icon instagram is-medium"></i>
                   <i className="nes-icon gmail is-medium"></i>
                   <i className="nes-icon linkedin is-medium"></i>
                 </section>
-              </div>
+              </div> */}
+              <CartWidget className="col-md-4 right-header end-xs"></CartWidget>
           </div>
         </div>
 
