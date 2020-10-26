@@ -23,7 +23,7 @@ function App() {
       <div className="container" style={{paddingTop: 30}}>
         <div className="row">
           <ItemCount onAdd={handleAdd} stock={10} initial={1} ></ItemCount>
-          <ItemCount onAdd={handleAdd} stock={30} initial={2} ></ItemCount>
+          <ItemCount onAdd={handleAdd} stock={30} initial={1} ></ItemCount>
         </div>
       </div>
       

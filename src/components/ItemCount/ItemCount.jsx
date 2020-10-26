@@ -24,8 +24,11 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     const handleOnAdd = () => {
         
         onAdd(amount, max, ini);
-        setMax(max - amount)
+        setMax(max - amount);
         setAmount(ini);
+        if(max < amount){
+            setMax(0);
+        }
     }
 
 
@@ -38,6 +41,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       >
         <div className="row center-xs">
           <div className="col-md-12">Producto</div>
+  <p>Stock = {max}</p>
         </div>
         <div className="row center-xs">
           <div className="col-md-4">
