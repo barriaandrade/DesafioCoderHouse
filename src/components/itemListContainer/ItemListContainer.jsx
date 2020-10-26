@@ -2,7 +2,7 @@ import React from 'react'
 
 const ItemListContainer = ({title}) => {
     return (
-        <div>
+   
             <div className="container" style={{paddingTop: 30}}>
                 <div className="row">
                     <div className="col-md-12">
@@ -11,7 +11,6 @@ const ItemListContainer = ({title}) => {
                 </div>
             </div>
             
-        </div>
     )
 }
 

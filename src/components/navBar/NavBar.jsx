@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <div>
       <nav>
-        <div class="container">
+        <div className="container">
           <div className="row center-xs between-xs">
               <a href="#">&lt;</a>
               <a href="#">Inicio</a>

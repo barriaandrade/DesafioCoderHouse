@@ -3,7 +3,7 @@ import CartWidget from "../cartWidget/CartWidget";
 
 import "../header/Header.css";
 
-const Header = () => {
+const Header = ({productos}) => {
   return (
     <div>
       <header>
@@ -24,7 +24,7 @@ const Header = () => {
                   <i className="nes-icon linkedin is-medium"></i>
                 </section>
               </div> */}
-              <CartWidget className="col-md-4 right-header end-xs"></CartWidget>
+              <CartWidget total={productos} className="col-md-4 right-header end-xs"></CartWidget>
           </div>
         </div>
 
