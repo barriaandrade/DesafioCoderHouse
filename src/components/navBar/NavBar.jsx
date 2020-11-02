@@ -6,17 +6,17 @@ const NavBar = () => {
       <nav>
         <div className="container">
           <div className="row center-xs between-xs">
-              <a href="#">&lt;</a>
-              <a href="#">Inicio</a>
-              <a href="#">Productos</a>
-              <a href="#">Ofertas</a>
-              <a href="#">FAQ</a>
-              <a href="#">Próximamente</a>
-              <a href="#">Empleo</a>
-              <a href="#">COVID-19</a>
-              <a href="#">Nosotros</a>
-              <a href="#">Contacto</a>
-              <a href="#">&gt;</a>
+              <a href="localhost:3000/">&lt;</a>
+              <a href="localhost:3000/">Inicio</a>
+              <a href="localhost:3000/">Productos</a>
+              <a href="localhost:3000/">Ofertas</a>
+              <a href="localhost:3000/">FAQ</a>
+              <a href="localhost:3000/">Próximamente</a>
+              <a href="localhost:3000/">Empleo</a>
+              <a href="localhost:3000/">COVID-19</a>
+              <a href="localhost:3000/">Nosotros</a>
+              <a href="localhost:3000/">Contacto</a>
+              <a href="localhost:3000/">&gt;</a>
           </div>
         </div>
       </nav>
