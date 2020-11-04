@@ -1,5 +1,6 @@
 import React from "react";
 import "../navBar/NavBar.css";
+import { Link} from 'react-router-dom';
 const NavBar = () => {
   return (
     <div>
@@ -7,7 +8,7 @@ const NavBar = () => {
         <div className="container">
           <div className="row center-xs between-xs">
               <a href="localhost:3000/">&lt;</a>
-              <a href="localhost:3000/">Inicio</a>
+              <Link to="/"><a>Inicio</a></Link>
               <a href="localhost:3000/">Productos</a>
               <a href="localhost:3000/">Ofertas</a>
               <a href="localhost:3000/">FAQ</a>
