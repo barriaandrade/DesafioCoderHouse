@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
   return (
@@ -7,7 +8,7 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
       style={{ marginRight: 30 }}
     >
       <div className="row center-xs">
-        <div className="col-md-6" style={{paddingTop: 30}}>
+        <div className="col-md-6" style={{ paddingTop: 30 }}>
           <div className="row center-xs">
             <div className="col-md-12">{description}</div>
           </div>
@@ -29,7 +30,18 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
             </div>
           </div>
           <div className="row center-xs">
-            <div className="col-md-12"><h2>$ {price}</h2></div>
+            <div className="col-md-12">
+              <h2>$ {price}</h2>
+            </div>
+          </div>
+          <div className="row center-xs">
+            <div className="col-md-12">
+              <Link to="/cart">
+                <button type="button" className="nes-btn is-success">
+                  Agregar al carrito
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

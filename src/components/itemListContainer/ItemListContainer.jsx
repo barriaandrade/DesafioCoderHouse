@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import ItemList from '../itemList/ItemList';
+import ItemList from './itemList/ItemList';
 
 const getItems = () =>{
     return new Promise((res, rej) => {
@@ -29,7 +29,7 @@ const ItemListContainer = ({title}) => {
                         <h3 style={{marginBottom: 30}}>{title}</h3>
                         <div className="row">
                             <div className="col-md-12">
-                            <ItemList items={items}></ItemList>
+                                    <ItemList items={items}></ItemList>
                             </div>
                         </div>
                     </div>

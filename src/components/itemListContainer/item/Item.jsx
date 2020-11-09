@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link} from 'react-router-dom';
 const Item = ({id, title, price, pictureUrl}) => {
 
 
@@ -8,6 +8,7 @@ const Item = ({id, title, price, pictureUrl}) => {
         className="nes-container is-rounded col-md-3"
         style={{ marginRight: 30 }}
       >
+        <Link to={`/itemDetail/${id}`}>
         <div className="row center-xs">
           <div className="col-md-12" style={{ marginBottom: 15 }}>{title}</div>
         </div>
@@ -21,6 +22,7 @@ const Item = ({id, title, price, pictureUrl}) => {
             $ {price}
           </div>
         </div>
+        </Link>
       </div>
   );
 };

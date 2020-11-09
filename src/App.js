@@ -4,6 +4,7 @@ import ItemListContainer from "./components/itemListContainer/ItemListContainer.
 import NavBar from "./components/navBar/NavBar.jsx";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailContainer";
+import Cart from "./components/cart/Cart";
 
 function App() {
   const [total, setTotal] = useState(0);
@@ -21,10 +22,12 @@ function App() {
         <Switch>
           <Route exact path="/">
             <ItemListContainer title={"Productos"}></ItemListContainer>
-            <ItemDetailContainer title={"Super Mario 3"}></ItemDetailContainer>
           </Route>
-          <Route path="/otrocomponente">
-            <p>Este es otro componente</p>
+          <Route exact path="/itemDetail/:itemId">
+            <ItemDetailContainer></ItemDetailContainer>
+          </Route>
+          <Route exact path="/cart">
+            <Cart></Cart>
           </Route>
         </Switch>
         {/* <div className="container" style={{paddingTop: 30}}>
