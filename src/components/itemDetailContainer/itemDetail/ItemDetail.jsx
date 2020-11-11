@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ItemCount from "../../itemCount/ItemCount";
 
 const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
+  const [total, setTotal] = useState(0);
+  const [item, setItem] = useState({});
+  const [hide, setHide] = useState(true);
+
+  const handleAdd = (amount, stock, initial) => {
+    if (stock >= amount) {
+      setTotal(total + amount);
+    }
+
+    setHide(false);
+  };
+
+  useEffect(() => {
+    setItem({ titulo: title, total: total });
+  }, [total]);
+
+  console.log(item);
+
   return (
     <div
       className="nes-container is-rounded col-md-12"
@@ -35,13 +54,15 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
             </div>
           </div>
           <div className="row center-xs">
-            <div className="col-md-12">
+            {hide ? (
+              <ItemCount onAdd={handleAdd} stock={10} initial={1}></ItemCount>
+            ) : (
               <Link to="/cart">
                 <button type="button" className="nes-btn is-success">
                   Agregar al carrito
                 </button>
               </Link>
-            </div>
+            )}
           </div>
         </div>
       </div>

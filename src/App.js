@@ -7,17 +7,12 @@ import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailCont
 import Cart from "./components/cart/Cart";
 
 function App() {
-  const [total, setTotal] = useState(0);
 
-  const handleAdd = (amount, stock, initial) => {
-    if (stock >= amount) {
-      setTotal(total + amount);
-    }
-  };
+
   return (
     <BrowserRouter>
       <div className="App">
-        <Header productos={total}></Header>
+        <Header productos={0}></Header>
         <NavBar></NavBar>
         <Switch>
           <Route exact path="/">

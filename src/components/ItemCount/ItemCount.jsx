@@ -22,6 +22,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     }  
 
     const handleOnAdd = () => {
+
         
         onAdd(amount, max, ini);
         setMax(max - amount);
@@ -35,14 +36,17 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
   return (
     <>
+                <div className="col-md-12">
+              <div className="container"  style={{paddingLeft: 100}}>
+                <div className="row">
       <div
-        className="container nes-container is-rounded col-md-2"
-        style={{ marginRight: 30 }}
+        className="container nes-container is-rounded col-md-4"
+        style={{ paddingRight: 25, width: 300 }}
       >
-        <div className="row center-xs">
+        {/* <div className="row center-xs">
           <div className="col-md-12">Producto</div>
-  <p>Stock = {max}</p>
-        </div>
+            <p>Stock = {max}</p>
+        </div> */}
         <div className="row center-xs">
           <div className="col-md-4">
             <button type="button" className="nes-btn is-warning" onClick={onMinus}>
@@ -58,14 +62,17 @@ const ItemCount = ({ initial, stock, onAdd }) => {
             </button>
           </div>
         </div>
-        <div className="row center-xs">
-          <div className="col-md-11">
-            <button type="button" className="nes-btn is-primary" onClick={handleOnAdd}>
+        <div className="row center-xs" style={{paddingTop: 6}}>
+          <div className="col-md-12">
+            <button type="button" className="nes-btn is-primary" onClick={handleOnAdd} style={{width: 300, paddingLeft: 6, paddingTop: 10}}>
               Agregar
             </button>
           </div>
         </div>
       </div>
+      </div>
+              </div>
+            </div>
     </>
   );
 };
