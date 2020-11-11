@@ -59,7 +59,7 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
             ) : (
               <Link to="/cart">
                 <button type="button" className="nes-btn is-success">
-                  Terminar compra
+                  Termina tu compra
                 </button>
               </Link>
             )}
