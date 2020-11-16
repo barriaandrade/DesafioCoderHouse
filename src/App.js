@@ -5,34 +5,29 @@ import NavBar from "./components/navBar/NavBar.jsx";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailContainer";
 import Cart from "./components/cart/Cart";
+import CartProvider from "./context/cartContext";
 
 function App() {
-
-
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header productos={0}></Header>
-        <NavBar></NavBar>
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer title={"Productos"}></ItemListContainer>
-          </Route>
-          <Route exact path="/itemDetail/:itemId">
-            <ItemDetailContainer></ItemDetailContainer>
-          </Route>
-          <Route exact path="/cart">
-            <Cart></Cart>
-          </Route>
-        </Switch>
-        {/* <div className="container" style={{paddingTop: 30}}>
-        <div className="row">
-          <ItemCount onAdd={handleAdd} stock={10} initial={1} ></ItemCount>
-          <ItemCount onAdd={handleAdd} stock={30} initial={1} ></ItemCount>
+    <CartProvider defaultCart={[]}>
+      <BrowserRouter>
+        <div className="App">
+          <Header></Header>
+          <NavBar></NavBar>
+          <Switch>
+            <Route exact path="/">
+              <ItemListContainer title={"Productos"}></ItemListContainer>
+            </Route>
+            <Route exact path="/itemDetail/:itemId">
+              <ItemDetailContainer></ItemDetailContainer>
+            </Route>
+            <Route exact path="/cart">
+              <Cart></Cart>
+            </Route>
+          </Switch>
         </div>
-      </div> */}
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

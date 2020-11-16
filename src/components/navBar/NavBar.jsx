@@ -8,7 +8,9 @@ const NavBar = () => {
         <div className="container">
           <div className="row center-xs between-xs">
               <a href="localhost:3000/">&lt;</a>
-              <Link to="/"><a>Inicio</a></Link>
+              <Link to="/">
+                Inicio
+              </Link>
               <a href="localhost:3000/">Productos</a>
               <a href="localhost:3000/">Ofertas</a>
               <a href="localhost:3000/">FAQ</a>

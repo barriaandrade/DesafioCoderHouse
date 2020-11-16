@@ -9,9 +9,9 @@ const CartWidget = ({total}) => {
 
           <div className="col-md-2 right-header end-xs">
             <section className="icon-list">
-              <a>
+              
               <i className="nes-icon coin is-medium"></i>
-              </a>
+              
               
             </section>
           </div>

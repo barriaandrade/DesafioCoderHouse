@@ -1,9 +1,15 @@
 import React from "react";
+import { useCartContext } from "../../context/cartContext";
 import CartWidget from "../cartWidget/CartWidget";
 
 import "../header/Header.css";
 
-const Header = ({productos}) => {
+const Header = () => {
+
+  const { cart } = useCartContext();
+
+  console.log('carrito', cart.length);
+  
   return (
     <div>
       <header>
@@ -24,7 +30,7 @@ const Header = ({productos}) => {
                   <i className="nes-icon linkedin is-medium"></i>
                 </section>
               </div> */}
-              <CartWidget total={productos} className="col-md-4 right-header end-xs"></CartWidget>
+              <CartWidget total={cart.length} className="col-md-4 right-header end-xs"></CartWidget>
           </div>
         </div>
 

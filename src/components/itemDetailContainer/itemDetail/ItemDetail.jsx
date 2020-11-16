@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../../context/cartContext";
 import ItemCount from "../../itemCount/ItemCount";
 
 const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
@@ -7,20 +8,25 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
   const [item, setItem] = useState({});
   const [hide, setHide] = useState(true);
 
+  const { cart, add, remove } = useCartContext();
+
+  useEffect(() => {
+    setItem({ id: id, titulo: title, total: total, price: price });
+  }, []) 
+  
+  
+
   const handleAdd = (amount, stock, initial) => {
     if (stock >= amount) {
       setTotal(total + amount);
+      add({ id: id, titulo: title, total: total+amount, price: price });
     }
-
+    
     setHide(false);
   };
+  
 
-  useEffect(() => {
-    setItem({ titulo: title, total: total });
-  }, [total]);
-
-  console.log(item);
-
+ 
   return (
     <div
       className="nes-container is-rounded col-md-12"
