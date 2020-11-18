@@ -19,7 +19,7 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
   const handleAdd = (amount, stock, initial) => {
     if (stock >= amount) {
       setTotal(total + amount);
-      add({ id: id, titulo: title, total: total+amount, price: price });
+      add({ id: id, titulo: title, total: total+amount, price: price, pictureUrl: pictureUrl});
     }
     
     setHide(false);

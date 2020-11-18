@@ -2,34 +2,34 @@ import React, { useEffect, useState } from "react";
 import { getFirestore } from "../../firebase";
 import ItemList from "./itemList/ItemList";
 
-// const getItems = () =>{
-//     return new Promise((res, rej) => {
-//         setTimeout(() =>{
-//             res([{id: 1, title: "SuperMario 3", price: 1000, pictureUrl: "https://media.vandal.net/m/22729/super-mario-bros-3-cv-2013122414722_1.jpg" },
-//         {id: 2, title: "Zelda ", price: 2000, pictureUrl: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2017/02/legend-zelda-caratula.jpg?itok=v7YayVPx"}])
-//         },2000)
+ const getItems = () =>{
+     return new Promise((res, rej) => {
+         setTimeout(() =>{
+             res([{id: 1, title: "SuperMario 3", price: 1000, pictureUrl: "https://media.vandal.net/m/22729/super-mario-bros-3-cv-2013122414722_1.jpg" },
+         {id: 2, title: "Zelda ", price: 2000, pictureUrl: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2017/02/legend-zelda-caratula.jpg?itok=v7YayVPx"}])
+         },2000)
 
-//     });
-// }
+     });
+}
 
 const ItemListContainer = ({ title }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const db = getFirestore();
-    const itemCollection = db.collection("items");
-    const pricedItems = itemCollection.where('price', '>', 400);
-    const gamesCollection = itemCollection.where('categoryID', '==', 'juegos');
-    pricedItems.get().then((querySnapshot) => {
-      if (querySnapshot.size === 0) {
-        console.log("Sin resultados");
-      }
-      setItems(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-    });
-
-    // getItems().then((items) => {
-    //   setItems(items);
+    // const db = getFirestore();
+    // const itemCollection = db.collection("items");
+    // const pricedItems = itemCollection.where('price', '>', 400);
+    // const gamesCollection = itemCollection.where('categoryID', '==', 'juegos');
+    // pricedItems.get().then((querySnapshot) => {
+    //   if (querySnapshot.size === 0) {
+    //     console.log("Sin resultados");
+    //   }
+    //   setItems(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     // });
+
+    getItems().then((items) => {
+      setItems(items);
+    });
   }, []);
 
   return (

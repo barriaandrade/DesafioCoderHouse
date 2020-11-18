@@ -37,12 +37,41 @@ export default function CartProvider({children, defaultCart}) {
             console.log("no existe item");
             return;
         }
-        setCart([cart.filter(obj => obj.id !== item.id)]);
+        setCart(cart.filter(obj => obj.id !== item.id));
         console.log('Removiendo', item.id);
     }
 
+    const total = () => {
+        let total = 0
+        
 
-    return <CartContext.Provider value={{cart, add, remove}}>
+        cart.forEach( item => {
+            
+            let cantidad = parseInt(item.total);
+            let price = parseInt(item.price);
+            let priceCant =  cantidad * price;
+            total = total + priceCant;
+            
+        });
+
+        return total;
+    }
+
+    const cantidad = () =>{
+        let cantidad  = 0
+
+        cart.forEach( item => {
+            
+            let cant = parseInt(item.total);
+
+            cantidad = cantidad + cant;
+            
+        });
+
+        return cantidad;
+    }
+
+    return <CartContext.Provider value={{cart, add, remove, total, cantidad}}>
         {children}
     </CartContext.Provider>
 }

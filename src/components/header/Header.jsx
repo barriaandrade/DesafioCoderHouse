@@ -6,7 +6,7 @@ import "../header/Header.css";
 
 const Header = () => {
 
-  const { cart } = useCartContext();
+  const { cart, cantidad, total } = useCartContext();
 
   console.log('carrito', cart.length);
   
@@ -20,17 +20,10 @@ const Header = () => {
               <i className="nes-icon github is-medium"></i>
               <h1>8-Bit Sales</h1>
             </div>
-            {/* Right title */}
-          
-            {/* <div className="col-md-4 right-header end-xs">
-                <section className="icon-list">
-                  <i className="nes-icon facebook is-medium"></i>
-                  <i className="nes-icon instagram is-medium"></i>
-                  <i className="nes-icon gmail is-medium"></i>
-                  <i className="nes-icon linkedin is-medium"></i>
-                </section>
-              </div> */}
-              <CartWidget total={cart.length} className="col-md-4 right-header end-xs"></CartWidget>
+            {
+              total() !==0 && <CartWidget total={cantidad()} className="col-md-4 right-header end-xs"></CartWidget>
+            }
+              
           </div>
         </div>
 
