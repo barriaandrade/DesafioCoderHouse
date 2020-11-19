@@ -7,14 +7,18 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
   const [total, setTotal] = useState(0);
   const [item, setItem] = useState({});
   const [hide, setHide] = useState(true);
+  const [hide2, setHide2] = useState(false);
 
   const { cart, add, remove } = useCartContext();
 
   useEffect(() => {
     setItem({ id: id, titulo: title, total: total, price: price });
+    
   }, []) 
   
-  
+  setTimeout(() => {
+    setHide2(true);
+  },2000);
 
   const handleAdd = (amount, stock, initial) => {
     if (stock >= amount) {
@@ -61,7 +65,11 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
           </div>
           <div className="row center-xs">
             {hide ? (
-              <ItemCount onAdd={handleAdd} stock={10} initial={1}></ItemCount>
+              hide2 ? (<ItemCount onAdd={handleAdd} stock={10} initial={1}></ItemCount>) : (
+                <button type="button" className="nes-btn is-success">
+                Cargando
+              </button>
+              )
             ) : (
               <Link to="/cart">
                 <button type="button" className="nes-btn is-success">
