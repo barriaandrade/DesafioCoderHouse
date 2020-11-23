@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../../context/cartContext";
 import ItemCount from "../../itemCount/ItemCount";
 
-const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
+const ItemDetail = ({ id, title, price, pictureUrl, description, stock }) => {
   const [total, setTotal] = useState(0);
   const [item, setItem] = useState({});
   const [hide, setHide] = useState(true);
@@ -11,7 +11,7 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
   const { cart, add, remove } = useCartContext();
 
   useEffect(() => {
-    setItem({ id: id, titulo: title, total: total, price: price });
+    setItem({ id: id, titulo: title, total: total, price: price, stock: stock });
     
   }, []) 
   
@@ -61,7 +61,7 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
           </div>
           <div className="row center-xs">
             {hide ? (
-              title ? (<ItemCount onAdd={handleAdd} stock={10} initial={1}></ItemCount>) : (
+              title ? (<ItemCount onAdd={handleAdd} stock={stock} initial={1}></ItemCount>) : (
                 <button type="button" className="nes-btn is-success">
                 Cargando
               </button>

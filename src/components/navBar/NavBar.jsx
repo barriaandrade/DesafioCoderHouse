@@ -10,10 +10,16 @@ const NavBar = () => {
               <a href="localhost:3000/">&lt;</a>
               <Link to="/">
                 Inicio
+              </Link>              
+              <Link to="/">
+                Productos
               </Link>
-              <a href="localhost:3000/">Productos</a>
-              <a href="localhost:3000/">Ofertas</a>
-              <a href="localhost:3000/">FAQ</a>
+              <Link to="/category/juego">
+                Juegos
+              </Link>
+              <Link to="/category/libro">
+                Libros
+              </Link>
               <a href="localhost:3000/">Próximamente</a>
               <a href="localhost:3000/">Empleo</a>
               <a href="localhost:3000/">COVID-19</a>

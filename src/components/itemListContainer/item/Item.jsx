@@ -10,7 +10,7 @@ const Item = ({id, title, price, pictureUrl}) => {
       >
         <Link to={`/itemDetail/${id}`}>
         <div className="row center-xs">
-          <div className="col-md-12" style={{ marginBottom: 15 }}>{title}</div>
+          <div className="col-md-12" style={{ marginBottom: 15, height: 45 }}>{title}</div>
         </div>
         <div className="row center-xs">
           <div className="col-md-12">

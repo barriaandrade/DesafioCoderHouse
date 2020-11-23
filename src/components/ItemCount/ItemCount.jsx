@@ -73,7 +73,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
                     onClick={() => handleOnAdd()}
                     style={{ width: 300, paddingLeft: 6, paddingTop: 10 }}
                   >
-                    Agregar
+                    Agregar 
                   </button>
                 </div>
               </div>
