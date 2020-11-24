@@ -31,6 +31,7 @@ const ItemDetailContainer = () => {
     //         setItem(arrayFilter[0]);
     //     })
     // }, [itemId]);
+    console.log(item);
     useEffect(() => {
         const db = getFirestore();
         const itemCollection = db.collection("items").doc(`${itemId}`);
@@ -41,8 +42,8 @@ const ItemDetailContainer = () => {
         if (querySnapshot.size === 0) {
            console.log("sin resultado");
          }
-         console.log(querySnapshot.data())
-        setItem(querySnapshot.data());
+         
+        setItem({id: itemId, ...querySnapshot.data()});
          });
     
         // getItems().then((items) => {
