@@ -49,6 +49,7 @@ const Cart = () => {
         <div className="col-md-12">
           <h3 style={{ marginBottom: 20 }}>Carrito</h3>
           <div className="row">
+          {checkout == '' ? (
             <div className="col-md-12">
               {cart.map((item) => (
                 <div className="nes-container is-rounded col-md-12">
@@ -99,8 +100,7 @@ const Cart = () => {
                 <div className="nes-container is-rounded col-md-12">
                   <div className="row" style={{ paddingRight: 22 }}>
                     <div className="col-md-9">
-                    
-                    {checkout == '' ? ( <div>total: ${total()}</div>) : (<div>tu id de orden es: {checkout}</div>)}
+                     <div>total: ${total()}</div> 
                     </div>
                     <div className="col-md-3">
                     <button
@@ -146,6 +146,7 @@ const Cart = () => {
                 </div>
               )}
             </div>
+           ) : (<div>tu id de orden es: {checkout}</div>)}
           </div>
         </div>
       </div>
