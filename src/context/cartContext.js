@@ -9,6 +9,10 @@ export default function CartProvider({children, defaultCart}) {
 
     const [cart, setCart] = useState(defaultCart);
 
+    const cleanCart = () => {
+        setCart(defaultCart);
+    }
+
     const getFromCart = (id) => {
         return cart.find(obj => obj.id ===id)
     }
@@ -71,7 +75,7 @@ export default function CartProvider({children, defaultCart}) {
         return cantidad;
     }
 
-    return <CartContext.Provider value={{cart, add, remove, total, cantidad}}>
+    return <CartContext.Provider value={{cart, add, remove, total, cantidad, cleanCart}}>
         {children}
     </CartContext.Provider>
 }

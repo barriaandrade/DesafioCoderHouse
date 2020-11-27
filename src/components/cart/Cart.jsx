@@ -103,14 +103,23 @@ const Cart = () => {
                      <div>total: ${total()}</div> 
                     </div>
                     <div className="col-md-3">
-                    <button
+                    {/* <button
                         type="button"
                         className="nes-btn is-warning"
                         onClick={() => createOrder()}
                         style={{ width: 300 }}
                       >
                         crear orden
+                      </button> */}
+                      <Link to="/order">
+                      <button
+                        type="button"
+                        className="nes-btn is-warning"
+                        style={{ width: 300 }}
+                      >
+                        checkout
                       </button>
+                    </Link>
                     {/* <Link to="/">
                       <button
                         type="button"
