@@ -7,7 +7,10 @@ const NavBar = () => {
       <nav>
         <div className="container">
           <div className="row center-xs between-xs">
-              <a href="localhost:3000/">&lt;</a>
+              
+              <Link to="/">
+               &lt;
+              </Link>  
               <Link to="/">
                 Inicio
               </Link>              
@@ -20,12 +23,10 @@ const NavBar = () => {
               <Link to="/category/libro">
                 Libros
               </Link>
-              <a href="localhost:3000/">Próximamente</a>
-              <a href="localhost:3000/">Empleo</a>
-              <a href="localhost:3000/">COVID-19</a>
-              <a href="localhost:3000/">Nosotros</a>
-              <a href="localhost:3000/">Contacto</a>
-              <a href="localhost:3000/">&gt;</a>
+              <Link to="/">
+              &gt;
+              </Link> 
+              
           </div>
         </div>
       </nav>

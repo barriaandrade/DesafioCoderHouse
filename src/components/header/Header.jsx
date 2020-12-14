@@ -21,7 +21,7 @@ const Header = () => {
               <h1>8-Bit Sales</h1>
             </div>
             {
-              total() !==0 && <CartWidget total={cantidad()} className="col-md-4 right-header end-xs"></CartWidget>
+              total() !==0 && <CartWidget cantidad={cantidad()} className="col-md-4 right-header end-xs"></CartWidget>
             }
               
           </div>
